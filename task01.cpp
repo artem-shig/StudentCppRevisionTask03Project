@@ -37,5 +37,19 @@
 */
 
 int task01(int number) {
-	return 0;
+
+	if (number < -9999 || number > 9999) {
+		return 0;
+	}
+
+	int sum = 0;
+
+	for (int dig; number != 0;)
+	{
+		dig = number % 10;
+		number /= 10;
+		sum += abs(dig);
+	}
+
+	return sum;
 }
