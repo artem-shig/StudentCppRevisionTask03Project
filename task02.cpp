@@ -48,5 +48,20 @@
 */
 
 string task02(int a, int b, int n) {
-	return "error";
+
+	if ((a <= 0 && b <= 0 || n <= 0)
+		|| (a < 0 || b < 0)) {
+		return "error";
+	}
+
+	int rub = a * n;
+	int kopecks = b * n;
+
+	if (kopecks >= 100) {
+		rub += kopecks / 100;
+		kopecks -= (kopecks / 100) * 100;
+	}
+
+	return to_string(rub) + " " + to_string(kopecks);
+
 }
